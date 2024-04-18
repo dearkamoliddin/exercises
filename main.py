@@ -1,4 +1,5 @@
 
+
 nums = [12, 34, 5, 3, 2, 423, 2, 23, 44]
 
 num_iter = iter(nums)
@@ -12,3 +13,17 @@ while True:
         break
 
 print("Sum of even numbers:", summa)
+
+
+
+def fibonacci_numbers(nums):
+    x, y = 0, 1
+    for _ in range(nums):
+        x, y = y, x+y
+        yield x
+
+def square(nums):
+    for num in nums:
+        yield num**2
+
+print(sum(square(fibonacci_numbers(10))))
